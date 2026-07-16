@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Maker Support</title>
+    <meta
+      name="description"
+      content="Support page for Invoice Maker with contact details, troubleshooting guidance, and privacy links."
+    />
+    <style>
+      :root {
+        --bg: #f4efe6;
+        --panel: rgba(255, 255, 255, 0.82);
+        --text: #1e1c1a;
+        --muted: #5f5a54;
+        --line: rgba(30, 28, 26, 0.12);
+        --accent: #d96c3f;
+        --accent-dark: #8f3d1d;
+        --shadow: 0 24px 60px rgba(83, 53, 35, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(217, 108, 63, 0.18), transparent 32%),
+          radial-gradient(circle at top right, rgba(57, 108, 99, 0.16), transparent 26%),
+          linear-gradient(180deg, #f8f4ec 0%, #efe6da 100%);
+      }
+
+      a {
+        color: var(--accent-dark);
+      }
+
+      .shell {
+        width: min(1040px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0 56px;
+      }
+
+      .hero,
+      .panel {
+        background: var(--panel);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -80px -80px auto;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(217, 108, 63, 0.28), transparent 68%);
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        font-size: 0.82rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent-dark);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+        line-height: 1.05;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 6vw, 4.5rem);
+        max-width: 12ch;
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 1.15rem;
+        margin-bottom: 8px;
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      .lede {
+        margin-top: 18px;
+        max-width: 62ch;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        padding: 24px;
+      }
+
+      .contact-card {
+        grid-column: span 4;
+      }
+
+      .wide {
+        grid-column: span 6;
+      }
+
+      .full {
+        grid-column: 1 / -1;
+      }
+
+      .label {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(217, 108, 63, 0.12);
+        color: var(--accent-dark);
+        font-size: 0.86rem;
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        line-height: 1.7;
+      }
+
+      .language-line {
+        margin-top: 10px;
+        color: var(--muted);
+      }
+
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 0.94rem;
+        text-align: center;
+      }
+
+      .link-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 16px;
+        border-radius: 999px;
+        background: var(--text);
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid var(--line);
+      }
+
+      @media (max-width: 860px) {
+        .contact-card,
+        .wide {
+          grid-column: 1 / -1;
+        }
+
+        .hero,
+        .panel {
+          border-radius: 24px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .shell {
+          width: min(100% - 20px, 1040px);
+          padding-top: 20px;
+          padding-bottom: 32px;
+        }
+
+        .hero,
+        .panel {
+          padding: 20px;
+          border-radius: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">App Store Support URL</p>
+        <h1>Invoice Maker Support</h1>
+        <p class="lede">
+          Need help with Invoice Maker? Contact us for bug reports, invoice export
+          issues, general feedback, and feature requests.
+        </p>
+        <p class="language-line">
+          RU: Если вам нужна помощь с Invoice Maker, напишите нам по любым
+          вопросам: ошибки, проблемы с созданием или экспортом инвойсов,
+          предложения и запросы новых функций.
+        </p>
+        <div class="link-row">
+          <a class="button" href="mailto:support@merivogrowth.com">Email support</a>
+          <a class="button secondary" href="privacy.html">Privacy Policy</a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel contact-card">
+          <span class="label">Email</span>
+          <h3>Support inbox</h3>
+          <p><a href="mailto:support@merivogrowth.com">support@merivogrowth.com</a></p>
+          <p class="language-line">RU: Основной канал поддержки.</p>
+        </article>
+
+        <article class="panel contact-card">
+          <span class="label">Phone</span>
+          <h3>Support phone</h3>
+          <p><a href="tel:+34676262378">+34 676 262 378</a></p>
+          <p class="language-line">RU: Контактный телефон для обращений.</p>
+        </article>
+
+        <article class="panel contact-card">
+          <span class="label">Address</span>
+          <h3>Legal address</h3>
+          <p>Nikita Fedosov</p>
+          <p>C. de El Escorial 18, Madrid 28004</p>
+          <p class="language-line">RU: Юридический адрес для связи.</p>
+        </article>
+
+        <article class="panel wide">
+          <span class="label">Before You Write</span>
+          <h2>What to include</h2>
+          <p>
+            To help us resolve your issue faster, please include the information below.
+          </p>
+          <ul>
+            <li>App version</li>
+            <li>Device model</li>
+            <li>iOS or iPadOS version</li>
+            <li>Short description of the issue</li>
+            <li>Screenshots, if relevant</li>
+          </ul>
+        </article>
+
+        <article class="panel wide">
+          <span class="label">Response Time</span>
+          <h2>How we handle requests</h2>
+          <p>
+            We aim to reply within 2 business days.
+            Feature requests are reviewed regularly, but we cannot guarantee
+            implementation dates.
+          </p>
+          <p class="language-line">
+            RU: Обычно мы отвечаем в течение 2 рабочих дней. Запросы на новые
+            функции рассматриваются отдельно.
+          </p>
+        </article>
+
+        <article class="panel full">
+          <span class="label">FAQ</span>
+          <h2>Common support topics</h2>
+          <ul>
+            <li>Invoice issue: tell us what you were trying to create or export and what went wrong.</li>
+            <li>Bug report: tell us what you expected to happen and what happened instead.</li>
+            <li>Data deletion request: email support and describe what data you want removed.</li>
+            <li>Privacy question: review our <a href="privacy.html">Privacy Policy</a> or contact support.</li>
+          </ul>
+        </article>
+      </section>
+
+      <p class="footer">
+        Last updated: July 16, 2026
+      </p>
+    </main>
+  </body>
+</html>
